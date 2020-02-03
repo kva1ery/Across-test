@@ -6,7 +6,17 @@ angular.
       templateUrl: 'scripts/app/article-list/article-list.template.html',
       controller: ['Article',
           function (Article) {
-              this.articles = Article.query();
+              var self = this;
+
+              self.load = function() {
+                  self.articles = Article.query();
+              };
+
+              self.delete = function (article) {
+                  Article.delete({ articleId: article.Id }).$promise.then(self.load);
+              };
+
+              self.load();
           }
       ]
   });

@@ -38,3 +38,7 @@ margin-bottom: 25px;
   font-size: 14px;
   color: #888888;
 }
+
+.article__delete {
+    font-size: 14px;
+}
