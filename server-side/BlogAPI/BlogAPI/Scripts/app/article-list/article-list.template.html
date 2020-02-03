@@ -9,7 +9,7 @@
     <div class="col s12">
         <div class="card">
             <div class="card-content article">
-                <h3 class="card-title article__title">{{article.Title}} <button class="btn white black-text right" ng-click="$ctrl.delete(article)">Удалить</button></h3>
+                <h3 class="card-title article__title"><a href="#!/article/{{article.Id}}">{{article.Title}}</a> <button class="btn white black-text right" ng-click="$ctrl.delete(article)">Удалить</button></h3>
                 <time class="article__pubdate" datetime="{{article.PubDate}}">{{article.PubDate | date:'dd.MM.yyyy'}}</time>
                 <p class="article__text">{{article.Text}}</p>
             </div>
