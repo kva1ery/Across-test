@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('articleForm', []);
+angular.module('articleForm', ['core.article']);

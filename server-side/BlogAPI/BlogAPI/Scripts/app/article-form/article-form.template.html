@@ -2,33 +2,31 @@
 
     <h2 class="content__title">Новая статья</h2>
     <div class="content__actions">
-        <a class="btn waves-effect waves-light teal">Вернуться к списку</a>
+        <a href="#!/articles/" class="btn waves-effect waves-light teal">Вернуться к списку</a>
     </div>
 </div>
 
 
-<form></form>
+<form>
     <div class="row">
         <div class="input-field col s12 m8">
-            <input class="validate" type="text" id="title" name="title" >
+            <input class="validate" type="text" id="title" name="title" ng-model="$ctrl.title">
             <label for="title">Заголовок</label>
         </div>
 
         <div class="input-field col s12 m4">
+            <input class="validate" id="pubDate" name="pubDate" type="text" ng-model="$ctrl.pubDate">
             <label for="pubDate">Дата публикации</label>
-            <input class="validate" id="pubDate" name="pubDate" type="datetime">
-            
         </div>
     </div>
     <div class="row">
         <div class="input-field col s12">
-            <textarea class="materialize-textarea validate" id="text" name="text"></textarea>
+            <textarea class="materialize-textarea validate" id="text" name="text" ng-model="$ctrl.text"></textarea>
             <label for="text">Текст</label>
         </div>
 
         <div class="col s12">
-            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <button type="submit" class="btn btn-primary" ng-click="$ctrl.save()">Сохранить</button>
         </div>
     </div>
-    </div>        
 </form>
