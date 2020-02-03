@@ -10,6 +10,9 @@ namespace BlogAPI
         {
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/app/app.js",
+                "~/Scripts/app/core/core.module.js",
+                "~/Scripts/app/core/article/article.module.js",
+                "~/Scripts/app/core/article/article.service.js",
                 "~/Scripts/app/article-list/article-list.module.js",
                 "~/Scripts/app/article-list/article-list.component.js",
                 "~/Scripts/app/article-detail/article-detail.module.js",

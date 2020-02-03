@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('articleList', []);
+angular.module('articleList', ['core.article']);

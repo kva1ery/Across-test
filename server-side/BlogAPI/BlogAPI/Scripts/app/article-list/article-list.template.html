@@ -1,51 +1,21 @@
 <div class="content__header">
     <h2 class="content__title">Статьи</h2>
-  <div class="content__actions">
-    <a class="btn waves-effect waves-light teal">Добавить статью</a>
-  </div>
+    <div class="content__actions">
+        <a class="btn waves-effect waves-light teal">Добавить статью</a>
+    </div>
 </div>
 
-<div class="row">
+<div class="row" ng-repeat="article in $ctrl.articles | orderBy: 'PubDate'">
     <div class="col">
-      <div class="card">
-        <div class="card-content article">
-          <h3 class="card-title article__title">Статья 1</h3>
-          <time class="article__pubdate" datetime="2020-02-01">01.02.2020</time>
-          <p class="article__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae ullam aut recusandae nobis esse? Dolorum ipsum, numquam quas dolore eaque perferendis odit beatae iusto ut magni veritatis debitis incidunt suscipit!</p>
+        <div class="card">
+            <div class="card-content article">
+                <h3 class="card-title article__title">{{article.Title}}</h3>
+                <time class="article__pubdate" datetime="{{article.PubDate}}">{{article.PubDate | date:'dd.MM.yyyy'}}</time>
+                <p class="article__text">{{article.Text}}</p>
+            </div>
+            <div class="card-action">
+                <a href="#!/article/{{article.Id}}">Подробнее...</a>
+            </div>
         </div>
-        <div class="card-action">
-          <a href="#">Подробнее...</a>
-        </div>
-      </div>
     </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <div class="card">
-      <div class="card-content article">
-        <h3 class="card-title article__title">Статья 1</h3>
-        <time class="article__pubdate" datetime="2020-02-01">01.02.2020</time>
-        <p class="article__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae ullam aut recusandae nobis esse? Dolorum ipsum, numquam quas dolore eaque perferendis odit beatae iusto ut magni veritatis debitis incidunt suscipit!</p>
-      </div>
-      <div class="card-action">
-        <a href="#">Подробнее...</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <div class="card">
-      <div class="card-content article">
-        <h3 class="card-title article__title">Статья 1</h3>
-        <time class="article__pubdate" datetime="2020-02-01">01.02.2020</time>
-        <p class="article__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae ullam aut recusandae nobis esse? Dolorum ipsum, numquam quas dolore eaque perferendis odit beatae iusto ut magni veritatis debitis incidunt suscipit!</p>
-      </div>
-      <div class="card-action">
-        <a href="#">Подробнее...</a>
-      </div>
-    </div>
-  </div>
 </div>

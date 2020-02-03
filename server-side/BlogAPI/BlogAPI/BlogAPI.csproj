@@ -218,6 +218,7 @@
     <Content Include="Scripts\app\article-list\article-list.template.html" />
     <Content Include="Scripts\app\core\article\article.module.js" />
     <Content Include="Scripts\app\core\article\article.service.js" />
+    <Content Include="Scripts\app\core\core.module.js" />
     <Content Include="Scripts\materialize.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
