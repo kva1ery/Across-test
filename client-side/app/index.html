@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="blogApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Blog</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="lib/materialize-css/dist/css/materialize.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<div class="container">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Blog</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#!/articles">Статьи</a></li>
+        <li><a href="#!/article">Статья</a></li>
+        <li><a href="#!/article/new">Новая статья</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h1 class="visually-hidden">Блог</h1>
+  <div class="content">
+
+    <div ng-view></div>
+
+  </div>
+</div>
+
+  <script src="lib/materialize-css/dist/js/materialize.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="article-list/article-list.module.js"></script>
+  <script src="article-list/article-list.component.js"></script>
+  <script src="article-detail/article-detail.module.js"></script>
+  <script src="article-detail/article-detail.component.js"></script>
+  <script src="article-form/article-form.module.js"></script>
+  <script src="article-form/article-form.component.js"></script>
+</body>
+</html>
