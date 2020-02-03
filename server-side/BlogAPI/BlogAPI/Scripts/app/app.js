@@ -14,7 +14,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $routeProvider.when('/articles', {
     template: '<article-list></article-list>'
   }).
-  when('/article', {
+  when('/article/:articleId', {
     template: '<article-detail></article-detail>'
   }).
   when('/article/new', {
