@@ -1,1 +1,0 @@
-angular.module('core.article', ['ngResource']);
