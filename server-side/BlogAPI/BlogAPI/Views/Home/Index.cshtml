@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="blogApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blog</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!/articles" class="brand-logo">Blog</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#!/articles">Статьи</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <h1 class="visually-hidden">Блог</h1>
+        <div class="content">
+
+            <div ng-view></div>
+
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/materialize")
+    @Scripts.Render("~/bundles/angularjs")
+    @Scripts.Render("~/bundles/app")
+</body>
+</html>
