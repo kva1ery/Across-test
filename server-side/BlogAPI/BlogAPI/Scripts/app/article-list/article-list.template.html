@@ -1,24 +1,27 @@
 <div class="content__header">
     <h2 class="content__title">Статьи</h2>
     <div class="content__actions">
-        <a href="#!/new-article/" class="btn waves-effect waves-light teal">Добавить статью</a>
+        <a href="#!/new-article/" class="btn btn-primary">Добавить статью</a>
     </div>
 </div>
 
 <div class="row" ng-repeat="article in $ctrl.articles | orderBy: 'PubDate'">
-    <div class="col s12">
+    <div class="col-12 mb-3">
         <div class="card">
-            <div class="card-content article">
-                <h3 class="card-title article__title">
+            <div class="card-header">
+                <h3 class="d-flex article__title">
                     <a href="#!/article/{{article.Id}}">{{article.Title}}</a>
 
-                    <button class="btn white black-text right" ng-click="$ctrl.delete(article)">Удалить</button>
-                    <a class="btn white black-text right" href="#!/edit-article/{{article.Id}}">Редактировать</a>
+                    <a class="btn btn-light ml-auto" href="#!/edit-article/{{article.Id}}">Редактировать</a>
+                    <button class="btn btn-light" ng-click="$ctrl.delete(article)">Удалить</button>
                 </h3>
+            </div>
+            <div class="card-body">
+
                 <time class="article__pubdate" datetime="{{article.PubDate}}">{{article.PubDate | date:'dd.MM.yyyy'}}</time>
                 <p class="article__text">{{article.Text}}</p>
             </div>
-            <div class="card-action">
+            <div class="card-footer">
                 <a href="#!/article/{{article.Id}}">Подробнее...</a>
             </div>
         </div>

@@ -21,8 +21,7 @@ angular.
 
               this.save = function() {
 
-                  var newArticle = new Article(this.article);
-                  newArticle.$save().then(function() {
+                  this.article.$save().then(function() {
                       $location.path('/articles');
                   });
               };

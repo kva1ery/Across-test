@@ -10,25 +10,25 @@
 </head>
 <body>
 
-    <div class="container">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#!/articles" class="brand-logo">Blog</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#!/articles">Статьи</a></li>
-                </ul>
-            </div>
-        </nav>
+<div class="container">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#!/articles">Blog</a>
 
-        <h1 class="visually-hidden">Блог</h1>
-        <div class="content">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#!/articles">Статьи</a>
+                </li>
+            </ul>
+    </nav>
 
-            <div ng-view></div>
+    <h1 class="visually-hidden">Блог</h1>
+    <div class="content">
 
-        </div>
+        <div ng-view></div>
+
     </div>
+</div>
 
-    @Scripts.Render("~/bundles/materialize")
     @Scripts.Render("~/bundles/angularjs")
     @Scripts.Render("~/bundles/app")
 </body>

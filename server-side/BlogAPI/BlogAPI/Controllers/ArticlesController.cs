@@ -20,15 +20,7 @@ namespace BlogAPI.Controllers
         public Article GetArticle(int id) => _articleService.GetArticleById(id);
 
         public void PostArticle([FromBody] Article article) => _articleService.SaveArticle(article);
-
-        public void PutArticle(int id, [FromBody]Article article)
-        {
-            if (id == article.Id)
-            {
-                _articleService.SaveArticle(article);
-            }
-        }
-
+        
         public void Delete(int id)
         {
             _articleService.DeleteArticle(id);

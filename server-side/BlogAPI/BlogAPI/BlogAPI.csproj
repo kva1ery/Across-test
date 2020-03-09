@@ -163,8 +163,7 @@
   <ItemGroup>
     <Content Include="App_Data\text.txt" />
     <Content Include="Content\app.css" />
-    <Content Include="Content\materialize.css" />
-    <Content Include="Content\materialize.min.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -188,7 +187,6 @@
     <Content Include="Scripts\app\core\article\article.module.js" />
     <Content Include="Scripts\app\core\article\article.service.js" />
     <Content Include="Scripts\app\core\core.module.js" />
-    <Content Include="Scripts\materialize.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

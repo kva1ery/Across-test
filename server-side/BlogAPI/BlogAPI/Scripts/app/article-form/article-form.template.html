@@ -2,30 +2,30 @@
 
     <h2 class="content__title">{{ $ctrl.article.Id ? 'Редактирование статьи' : 'Новая статья' }}</h2>
     <div class="content__actions">
-        <a href="#!/articles/" class="btn waves-effect waves-light teal">Вернуться к списку</a>
+        <a href="#!/articles/" class="btn btn-primary">Вернуться к списку</a>
     </div>
 </div>
 
 
 <form>
     <div class="row">
-        <div class="input-field col s12 m8">
-            <input class="validate" type="text" id="title" name="title" ng-model="$ctrl.article.Title">
+        <div class="form-group col-sm-12 col-md-8">
             <label for="title">Заголовок</label>
+            <input class="form-control" type="text" id="title" name="title" ng-model="$ctrl.article.Title">
         </div>
 
-        <div class="input-field col s12 m4">
-            <input class="validate" id="pubDate" name="pubDate" type="text" ng-model="$ctrl.article.PubDate">
+        <div class="form-group col-sm-12 col-md-4">
             <label for="pubDate">Дата публикации</label>
+            <input class="form-control" id="pubDate" name="pubDate" type="date" ng-model="$ctrl.article.PubDate">
         </div>
     </div>
     <div class="row">
-        <div class="input-field col s12">
-            <textarea class="materialize-textarea validate" id="text" name="text" ng-model="$ctrl.article.Text"></textarea>
+        <div class="form-group col-12">
             <label for="text">Текст</label>
+            <textarea class="form-control" id="text" name="text" ng-model="$ctrl.article.Text"></textarea>
         </div>
 
-        <div class="col s12">
+        <div class="col-12">
             <button type="submit" class="btn btn-primary" ng-click="$ctrl.save()">Сохранить</button>
         </div>
     </div>
