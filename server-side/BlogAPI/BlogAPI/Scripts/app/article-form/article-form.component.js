@@ -9,18 +9,20 @@ angular.
               var self = this;
 
               if ($routeParams.articleId) {
-                  this.article = Article.get({ articleId: $routeParams.articleId });
+                  this.article = Article.get({ articleId: $routeParams.articleId }, function(article) {
+                      article.date = new Date(article.PubDate);
+                  });
               } else {
                   this.article = new Article({
                       Id: null,
                       Title: '',
-                      PubDate: Date.now(),
+                      date: new Date(),
                       Text: ''
                   });
               }
 
               this.save = function() {
-
+                  this.article.PubDate = new Date(this.article.date);
                   this.article.$save().then(function() {
                       $location.path('/articles');
                   });
