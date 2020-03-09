@@ -1,6 +1,6 @@
 <div class="content__header">
 
-    <h2 class="content__title">Новая статья</h2>
+    <h2 class="content__title">{{ $ctrl.article.Id ? 'Редактирование статьи' : 'Новая статья' }}</h2>
     <div class="content__actions">
         <a href="#!/articles/" class="btn waves-effect waves-light teal">Вернуться к списку</a>
     </div>
@@ -10,18 +10,18 @@
 <form>
     <div class="row">
         <div class="input-field col s12 m8">
-            <input class="validate" type="text" id="title" name="title" ng-model="$ctrl.title">
+            <input class="validate" type="text" id="title" name="title" ng-model="$ctrl.article.Title">
             <label for="title">Заголовок</label>
         </div>
 
         <div class="input-field col s12 m4">
-            <input class="validate" id="pubDate" name="pubDate" type="text" ng-model="$ctrl.pubDate">
+            <input class="validate" id="pubDate" name="pubDate" type="text" ng-model="$ctrl.article.PubDate">
             <label for="pubDate">Дата публикации</label>
         </div>
     </div>
     <div class="row">
         <div class="input-field col s12">
-            <textarea class="materialize-textarea validate" id="text" name="text" ng-model="$ctrl.text"></textarea>
+            <textarea class="materialize-textarea validate" id="text" name="text" ng-model="$ctrl.article.Text"></textarea>
             <label for="text">Текст</label>
         </div>
 

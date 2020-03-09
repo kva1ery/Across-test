@@ -4,20 +4,26 @@ angular.
   module('articleForm').
   component('articleForm', {
       templateUrl: 'scripts/app/article-form/article-form.template.html',
-      controller: ['$location', 'Article',
-          function ($location, Article) {
+      controller: ['$location', '$routeParams', 'Article',
+          function ($location, $routeParams, Article) {
               var self = this;
 
-              this.save = function() {
-                  var data = {
-                      title: self.title,
-                      pubDate: self.pubDate,
-                      text: self.text
-                  };
+              if ($routeParams.articleId) {
+                  this.article = Article.get({ articleId: $routeParams.articleId });
+              } else {
+                  this.article = new Article({
+                      Id: null,
+                      Title: '',
+                      PubDate: '',
+                      Text: ''
+                  });
+              }
 
-                  var newArticle = new Article(data);
+              this.save = function() {
+
+                  var newArticle = new Article(this.article);
                   newArticle.$save().then(function() {
-                      $location.path("/login");
+                      $location.path('/articles');
                   });
               };
           }
