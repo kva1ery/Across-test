@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace BlogAPI
 {
@@ -20,16 +19,13 @@ namespace BlogAPI
                 "~/Scripts/app/article-form/article-form.module.js",
                 "~/Scripts/app/article-form/article-form.component.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/materialize").Include(
-                "~/Scripts/materialize.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/angularjs").Include(
                       "~/Scripts/angular.js",
                       "~/Scripts/angular-route.js",
                       "~/Scripts/angular-resource.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                     "~/Content/materialize.css",
+                     "~/Content/bootstrap.min.css",
                       "~/Content/app.css"));
         }
     }

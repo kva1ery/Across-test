@@ -24,11 +24,11 @@
 }
 
 .content__actions {
-    margin-bottom: 25px;
+    margin-bottom: 0.5rem;
 }
 
 .article__title {
-    margin-top: 0;
+    margin: 0;
 }
 
 .article__title a {

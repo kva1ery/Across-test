@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
+using BlogDomain.Models;
 
-namespace BlogAPI.Models
+namespace BlogApiEF
 {
     public class BlogDbInitializer : DropCreateDatabaseIfModelChanges<BlogContext>
     {

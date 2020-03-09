@@ -20,5 +20,8 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   when('/new-article/', {
       template: '<article-form></article-form>'
   }).
+  when('/edit-article/:articleId', {
+      template: '<article-form></article-form>'
+  }).
   otherwise({redirectTo: '/articles'});
 }]);

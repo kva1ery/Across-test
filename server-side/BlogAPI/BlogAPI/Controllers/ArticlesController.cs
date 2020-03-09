@@ -1,62 +1,29 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Web.Http;
-using System.Web.Http.Cors;
-using BlogAPI.Models;
+using BlogDomain.Models;
+using BlogDomain.Services;
 
 namespace BlogAPI.Controllers
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ArticlesController : ApiController
     {
+        private readonly IArticleService _articleService;
 
-        private BlogContext context = new BlogContext();
-
-        public IEnumerable<Article> GetArticles()
+        public ArticlesController(IArticleService articleService)
         {
-            return context.Articles;
+            _articleService = articleService;
         }
 
-        public Article GetArticle(int id)
-        {
-            var article = context.Articles.Find(id);
-            return article;
-        }
+        public IEnumerable<Article> GetArticles() => _articleService.GetArticles();
 
-        public void PostArticle([FromBody]Article article)
-        {
-            context.Articles.Add(article);
-            context.SaveChanges();
-        }
+        public Article GetArticle(int id) => _articleService.GetArticleById(id);
 
-        public void PutArticle(int id, [FromBody]Article article)
-        {
-            if (id == article.Id)
-            {
-                context.Entry(article).State = EntityState.Modified;
-                context.SaveChanges();
-            }
-
-        }
-
+        public void PostArticle([FromBody] Article article) => _articleService.SaveArticle(article);
+        
         public void Delete(int id)
         {
-            var article = context.Articles.Find(id);
-            if (article != null)
-            {
-                context.Articles.Remove(article);
-                context.SaveChanges();
-            }
-
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                context.Dispose();
-            }
-            base.Dispose(disposing);
+            _articleService.DeleteArticle(id);
         }
     }
 }
