@@ -14,7 +14,7 @@ angular.
                   this.article = new Article({
                       Id: null,
                       Title: '',
-                      PubDate: '',
+                      PubDate: Date.now(),
                       Text: ''
                   });
               }

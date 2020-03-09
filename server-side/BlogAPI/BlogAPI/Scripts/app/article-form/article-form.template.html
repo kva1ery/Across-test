@@ -16,13 +16,13 @@
 
         <div class="form-group col-sm-12 col-md-4">
             <label for="pubDate">Дата публикации</label>
-            <input class="form-control" id="pubDate" name="pubDate" type="date" ng-model="$ctrl.article.PubDate">
+            <input class="form-control" id="pubDate" name="pubDate" type="date" ng-model="$ctrl.article.PubDate" value="{{$ctrl.article.PubDate | date: 'yyyy-MM-dd'}}">
         </div>
     </div>
     <div class="row">
         <div class="form-group col-12">
             <label for="text">Текст</label>
-            <textarea class="form-control" id="text" name="text" ng-model="$ctrl.article.Text"></textarea>
+            <textarea class="form-control" id="text" name="text" rows="10" ng-model="$ctrl.article.Text"></textarea>
         </div>
 
         <div class="col-12">
